@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	padding: 20px 0;
+}
+.page-com {
+	width: 100%;
+	height: 100%;
+}
+
+.page-out {
+	animation: pageOut 8s ease-in-out forwards;   /*8s,慢进慢出，停在最终状态*/
+	transform-origin: 71% 71%;
+}
+@keyframes pageOut {
+	0% { opacity: 1; }
+	100% { transform: scale(20); opacity: 0; }
+}
+
+section .page-in {
+	position: absolute;
+	z-index: 15;
+	opacity: 0;
+	transform: scale(8);
+	transform-origin: 50% 60%;
+	animation: pageIn 5s ease-in-out forwards;
+}
+@keyframes pageIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; transform: scale(1); }
+}
+

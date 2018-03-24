@@ -1,0 +1,142 @@
+.page-a {
+	position: absolute;
+	overflow: hidden;
+	z-index: 5;
+	width: 70%;
+	height: 80%;
+	left: 15%;
+	background: url('../images/a/page-a-bg.png')  no-repeat;
+	background-size: 100% 100%;
+}
+/*月亮和月亮光晕*/
+.moon {
+	position: absolute;
+	width: 6rem;
+	height: 6rem;
+	top: 1rem;
+	left: 12rem;
+	background: #FCF0BC;
+	border-radius: 50%;
+	box-shadow: 0 0 1.5rem #FCF0BC;
+	animation: moonGround 2s linear infinite;
+}
+@keyframes moonGround {
+	0% { box-shadow: 0 0 0 transparent; }
+	50% { box-shadow: 0 0 1rem #FCf0BC; }
+	100% { box-shadow: 0 0 0 transparent; }
+}
+/*树和树的变化*/
+.tree {
+	position: absolute;
+	z-index: 6;
+	bottom: 0;
+	left: 3.5rem;
+	width: 8rem;
+	height: 16rem;
+	background: url('../images/a/trees.png');
+	background-size: 200% 100%;
+	animation: treeGround 1s steps(2) infinite;
+}
+@keyframes treeGround {
+	0% { background-position: 0 0; }
+	100% { background-position: -200% 0; }
+}
+/*云和阴影*/
+.cloudy {
+	position: absolute;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	left: 2rem;
+	top: 2rem;
+	background: #60768D;
+	box-shadow: 1.5rem 0.8rem 0 -0.2rem #60768D, 
+	2rem -1rem 0 -0.1rem #60768D,
+	3.8rem -0.2rem 0 -0.2rem #60768D,
+	3.6rem 0.8rem 0 -0.3rem #60768D;
+}
+/*鹿的走动*/
+.deer {
+	position: absolute;
+	z-index: 7;
+	bottom: 50%;
+	left: -45%;
+	width: 25rem;
+	height: 8rem;
+	transform: rotateY(180deg);
+	background: url('../images/a/boy-sleigh-car.png');
+	background-size: 400% 100%;
+	
+}
+.deer-ground {
+	/*0-100之间分为三次*/
+	animation: deerGround 0.75s steps(3, end) infinite;
+}
+@keyframes deerGround {
+	0% { background-position: 0 0; }
+	100% { background-position: -300% 0; }
+}
+.deer-stop {
+	animation-play-state: paused;   /*停止动画*/
+	background-position: -300% 0;       /*恢复直立*/
+}
+.window {
+	position: absolute;
+	left: 59%;
+	top: 60%;
+	width: 10rem;
+	height: 5rem;
+}
+/*窗户底纹*/
+.window::before {
+	position: absolute;
+	content: '';
+	background: url('../images/a/window-bottom.png');
+	width: 100%;
+	height: 0.4rem;
+	bottom: 0.05rem;
+}
+/*窗户阴影*/
+.window::after {
+	position: absolute;
+	content: '';
+	background: url('../images/a/window-bottom-shadow.png');
+	width: 100%;
+	height: 0.2rem;
+	bottom: 0;
+}
+/*窗户的背景，打开窗户看到的*/
+.window-bg {
+	position: absolute;
+	box-shadow: 0 0 8px #fff;
+	width: 96%;
+	left: 2%;
+	height: 98%;
+	border-radius: 5px;
+	background: url('../images/a/page-a-window-bg.png');
+}
+.window-content {
+	transform-style: preserve-3d;
+	width: 96%;
+	margin:0 auto;
+	height: 100%;
+	overflow: hidden;
+}
+.window-left {
+	float: left;
+	width: 50%;
+	height: 100%;
+	background: url('../images/a/window-left.png');
+	border-top-left-radius: 5px;
+	transition: 3s ease-in-out;
+	
+}
+.window-right {
+	float: right;
+	width: 50%;
+	height: 100%;
+	background: url('../images/a/window-right.png');
+	border-top-right-radius: 5px;
+	transition: 3s ease-in-out;
+}
+
